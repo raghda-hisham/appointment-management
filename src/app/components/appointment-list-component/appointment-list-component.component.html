@@ -1,0 +1,21 @@
+  <ng-container *ngIf="appointments$">
+    <div class="appointment-list">
+      <h2>Appointments</h2>
+      <div *ngFor="let appointment of appointments$ | async" class="appointment-card" >
+        <div class="appointment-details">
+          <p><span>Date: </span>{{ appointment.dateTime }}</p>
+          <p><span>Name: </span>{{ appointment.clientName }}</p>
+          <p><span>appointmentType: </span>{{ appointment.appointmentType }}</p>
+          <p class="appointment-status"><span>Status: </span>{{ appointment.status }}</p>
+        </div>
+        <div class="btn-container">
+          <button   *ngIf="appointment.status !== appointmentStatus.Canceled" (click)="cancelAppointment(appointment.id)">Cancel</button>
+          <button   (click)="viewDetails(appointment)">Show Details</button>  
+        </div>
+  
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="!appointments$">
+    <app-no-found-data></app-no-found-data>
+  </ng-container>

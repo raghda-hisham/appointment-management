@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-bg: white;
+    --primary-text: black;
+  }
+  html, body { height: 100%; }
+  
+  body {
+    margin: 0 !important;
+    padding: 0 !important;;
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-bg);
+    color:var(--primary-text) ;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+  }
+
+  .dark-mode {
+    --primary-bg: #121212;
+    --primary-text: white;
+
+  }
+  .appointments-btn{
+    text-decoration: none;
+    border-radius: 25px;
+    background: blanchedalmond;
+    padding: 12px 37px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black ;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    transition: box-shadow 0.1;
+    cursor: pointer;
+    &:hover {
+      background:  var(--primary-text);
+      color:  var(--primary-bg) ;
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+    }
+  
+ }
+
+   .mat-mdc-dialog-container .mdc-dialog__surface {
+    background-color:  var(--primary-bg) !important;
+    color:  var(--primary-text);
+    padding: 48px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 465px;
+  }
+ 

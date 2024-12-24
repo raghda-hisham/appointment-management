@@ -1,0 +1,12 @@
+<div class="layout">
+    <header class="header">
+      <h1 class="logo" routerLink="/">Manage Appointments</h1>
+      <button class="toggle-mode" (click)="toggleDarkMode()">{{ isDarkMode ? '🌙' : '☀️' }}</button>
+    </header>
+  
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
+    <footer class="footer">© 2024 Company Name</footer>
+  </div>
+  

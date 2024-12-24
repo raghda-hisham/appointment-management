@@ -1,0 +1,20 @@
+
+<ng-container *ngIf="appointment">
+  <div class="appointment-details-section">
+    <h3>Appointment Details</h3>
+    <div class="appointment-details">
+      <p><strong>Date & Time:</strong> {{ appointment.dateTime }}</p>
+      <p><strong>Client Name:</strong> {{ appointment.clientName }}</p>
+      <p><strong>Appointment Type:</strong> {{ appointment.appointmentType }}</p>
+      <p><strong>Status:</strong> {{ appointment.status }}</p>
+      <p *ngIf="appointment.location"><strong>Location:</strong> {{ appointment.location }}</p>
+      <p *ngIf="appointment.notes"><strong>Notes:</strong> {{ appointment.notes }}</p>
+      <button class="appointments-btn" (click)="openCancelDialog(appointment.id)">Cancel Appointment</button>
+  
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!appointment">
+  <app-no-found-data></app-no-found-data>
+</ng-container>
